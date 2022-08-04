@@ -1,0 +1,139 @@
+﻿@model WebApplication7.Models.Pessoa
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Página do Pablo Rangel Andrade</h2>
+<p>Página de Exemplo</p>
+
+
+<br />
+<br />
+<p>View Tipada</p>
+
+<form action="Home/Lista" method="POST">
+    <fieldset>
+        <legend>
+            Informações de Clientes
+        </legend>
+
+        <div>
+            <label for="PessoaId">Código</label>
+        </div>
+        <div>
+            <input type="number" value="@Model.PessoaId" name="PessoaId" />
+        </div>
+        <br />
+        <div>
+            <label for="Nome">Nome</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Nome" name="Nome" />
+        </div>
+
+        <br />
+        <div>
+            <label for="Tipo">Tipo</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Tipo" name="Tipo" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Data_Nascimento</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Data_Nascimento" name="Data_Nascimento" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Profissao</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Profissao" name="Profissao" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Conta_Corrente</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Conta_Corrente" name="Conta_Corrente" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Agencia</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Agencia" name="Agencia" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Conta_destino</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Conta_destino" name="Conta_destino" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Id_Cliente</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Id_Cliente" name="Id_Cliente" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Cpf</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Cpf" name="Cpf" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Rg</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Rg" name="Rg" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Extrato</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Extrato" name="Extrato" />
+        </div>
+        <br />
+
+        <br />
+        <div>
+            <label for="Tipo">Saldo</label>
+        </div>
+        <div>
+            <input type="text" value="@Model.Saldo" name="Saldo" />
+        </div>
+        <br />
+
+
+        <p><input type="submit" value="Enviar" /></p>
+
+    </fieldset>
+</form>
+

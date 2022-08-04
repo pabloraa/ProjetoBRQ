@@ -1,0 +1,3 @@
+C:\Users\Pablo\source\repos\WebApplication7\WebModelsApi\obj\Debug\netcoreapp3.1\WebModelsApi.AssemblyInfoInputs.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebModelsApi\obj\Debug\netcoreapp3.1\WebModelsApi.AssemblyInfo.cs
+C:\Users\Pablo\source\repos\WebApplication7\WebModelsApi\obj\Debug\netcoreapp3.1\WebModelsApi.csproj.CoreCompileInputs.cache

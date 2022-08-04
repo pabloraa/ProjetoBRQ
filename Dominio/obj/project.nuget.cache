@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zgxUTga4LOce3WA+at801/7ghJF72/QwCqoqpdLPU6JVVtYusK2YvwAcILe7J0HBfxk2+IwbWHQT/NSDX80YYw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Pablo\\source\\repos\\WebApplication7\\Dominio\\Dominio.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pablo\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

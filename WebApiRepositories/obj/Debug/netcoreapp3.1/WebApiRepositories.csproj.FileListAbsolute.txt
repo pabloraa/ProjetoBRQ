@@ -1,0 +1,16 @@
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\WebApiRepositories.deps.json
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\WebApiRepositories.dll
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\WebApiRepositories.pdb
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\WebApiModels.dll
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\WebApiModels.pdb
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\obj\Debug\netcoreapp3.1\WebApiRepositories.csprojAssemblyReference.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\obj\Debug\netcoreapp3.1\WebApiRepositories.AssemblyInfoInputs.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\obj\Debug\netcoreapp3.1\WebApiRepositories.AssemblyInfo.cs
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\obj\Debug\netcoreapp3.1\WebApiRepositories.csproj.CopyComplete
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\obj\Debug\netcoreapp3.1\WebApiRepositories.dll
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\obj\Debug\netcoreapp3.1\WebApiRepositories.pdb
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\Dominio.dll
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\Dominio.pdb
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\Recursos.dll
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\bin\Debug\netcoreapp3.1\Recursos.pdb
+C:\Users\Pablo\source\repos\WebApplication7\WebApiRepositories\obj\Debug\netcoreapp3.1\WebApiRepositories.csproj.CoreCompileInputs.cache
