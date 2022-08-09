@@ -6,6 +6,6 @@ C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Rec
 C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Recursos.csproj.GenerateResource.cache
 C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Recursos.AssemblyInfoInputs.cache
 C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Recursos.AssemblyInfo.cs
+C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Recursos.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Recursos.dll
 C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Recursos.pdb
-C:\Users\Pablo\source\repos\WebApplication7\Recursos\obj\Debug\netcoreapp3.1\Recursos.csproj.CoreCompileInputs.cache

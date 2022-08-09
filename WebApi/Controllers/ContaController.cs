@@ -29,7 +29,7 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public IActionResult Create(Conta conta)
+        public async Task<IActionResult> Create(Conta conta) //assíncrona
         {
             if (conta is null)
             {
@@ -40,7 +40,7 @@ namespace WebApi.Controllers
                 return NotFound(Mensagens.FaltaCliente);
             }
 
-            var c =  _contaService.Create(conta);
+            var c = await _contaService.Create(conta);
             return Created("Contas", c);
         }
 

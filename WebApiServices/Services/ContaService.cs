@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Web.Http;
 using WebApi.DataBaseConection;
 using WebApi.Models;
@@ -32,11 +33,11 @@ namespace WebServiceApi.Services
             conta.Ativo = true;
         }
 
-        public Conta Create(Conta conta)
+        public async Task<Conta> Create(Conta conta) //assíncrono
         {
             GerarNovasCredenciaisDeConta(conta);
-            _context.Contas.Add(conta);
-            _context.SaveChanges();
+            await _context.Contas.AddAsync(conta);
+            await _context.SaveChangesAsync();
             return conta;
         }
 
