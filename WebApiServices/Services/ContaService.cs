@@ -24,6 +24,11 @@ namespace WebServiceApi.Services
             _transacaoService = transacaoService;
         }
 
+        public async Task<List<Conta>> GetAll()
+        {
+            return await _context.Contas.ToListAsync();
+        }
+
         private void GerarNovasCredenciaisDeConta(Conta conta)
         {
             conta.Id = Guid.NewGuid().ToString();
@@ -41,51 +46,50 @@ namespace WebServiceApi.Services
             return conta;
         }
 
-        public List<Conta> BuscarContasPorPessoaId(string id)
+        public async Task<List<Conta>> BuscarContasPorPessoaId(string id)
         {
-            var contas = _context.Contas.Where(x => x.PessoaId.Equals(id)).ToList();
+            var contas = await _context.Contas.Where(x => x.PessoaId.Equals(id)).ToListAsync();
             return contas;
         }
 
-
-        public Conta BuscarContaPorIdCliente(string idCliente)
+        public async Task<Conta> BuscarContaPorIdCliente(string idCliente)
         {
-            var contaEncontrada = _context.Contas.FirstOrDefault(x => x.PessoaId.Equals(idCliente));
+            var contaEncontrada = await _context.Contas.FirstOrDefaultAsync(x => x.PessoaId.Equals(idCliente));
             if (contaEncontrada is null)
             {
                 return null;
             }
-            contaEncontrada.Transacoes = _transacaoService.BuscarTransacoesPorIdConta(contaEncontrada.Id);
+            contaEncontrada.Transacoes = await _transacaoService.BuscarTransacoesPorIdConta(contaEncontrada.Id);
             return contaEncontrada;
         }
 
-        public Conta BuscarContaPorIdConta(string idConta)
+        public async Task<Conta> BuscarContaPorIdConta(string idConta)
         {
-            var contaEncontrada = _context.Contas.FirstOrDefault(x => x.Id.Equals(idConta));
+            var contaEncontrada = await _context.Contas.FirstOrDefaultAsync(x => x.Id.Equals(idConta));
             if (contaEncontrada is null)
             {
                 return null;
             }
-            contaEncontrada.Transacoes = _transacaoService.BuscarTransacoesPorIdConta(contaEncontrada.Id);
+            contaEncontrada.Transacoes = await _transacaoService.BuscarTransacoesPorIdConta(contaEncontrada.Id);
             return contaEncontrada;
         }
 
-        public Conta BuscarContaPorAgenciaENumero(int agencia, int numeroConta)
+        public async Task<Conta> BuscarContaPorAgenciaENumero(int agencia, int numeroConta)
         {
-            var contaEncontrada = _context.Contas.
-                FirstOrDefault(c => c.Agencia == agencia && c.NumeroConta == numeroConta);
+            var contaEncontrada = await _context.Contas.
+                FirstOrDefaultAsync(c => c.Agencia == agencia && c.NumeroConta == numeroConta);
 
             if (contaEncontrada is null)
             {
                 return null;
             }
-            contaEncontrada.Transacoes = _transacaoService.BuscarTransacoesPorIdConta(contaEncontrada.Id);
+            contaEncontrada.Transacoes = await _transacaoService.BuscarTransacoesPorIdConta(contaEncontrada.Id);
             return contaEncontrada;
         }
 
-        public Resultadoservice DeletarContaPorId(string id)
+        public async Task<Resultadoservice> DeletarContaPorId(string id)
         {
-            var contaEncontrada = _context.Contas.FirstOrDefault(p => p.Id.Equals(id));
+            var contaEncontrada = await _context.Contas.FirstOrDefaultAsync(p => p.Id.Equals(id));
             if (contaEncontrada is null)
             {
                 return Resultadoservice.NaoEncontrado;
@@ -97,9 +101,9 @@ namespace WebServiceApi.Services
             return Resultadoservice.Ok;
         }
 
-        public Conta AtualizarPorId(string id, Conta conta)
+        public async Task<Conta> AtualizarPorId(string id, Conta conta)
         {
-            var contaEncontrada = _context.Contas.FirstOrDefault(c => c.Id.Equals(id));
+            var contaEncontrada = await _context.Contas.FirstOrDefaultAsync(c => c.Id.Equals(id));
 
             if (contaEncontrada is null)
                 return null;
@@ -111,9 +115,9 @@ namespace WebServiceApi.Services
             return contaEncontrada;
         }
 
-        public Resultadoservice BuscaPorConta(int agencia, int conta)
+        public async Task<Resultadoservice> BuscaPorConta(int agencia, int conta)
         {
-            var contaEncontrada = _context.Contas.FirstOrDefault(c => c.NumeroConta.Equals(conta));
+            var contaEncontrada = await _context.Contas.FirstOrDefaultAsync(c => c.NumeroConta.Equals(conta));
 
             if (contaEncontrada is null)
                 return Resultadoservice.NaoEncontrado;
@@ -121,9 +125,10 @@ namespace WebServiceApi.Services
             return Resultadoservice.Ok;
         }
 
-        public Resultadoservice BuscarPorIdConta(string id)
+        public async Task<Resultadoservice> BuscarPorIdConta(string id)
         {
-            var contaEncontrada = _context.Contas.FirstOrDefault();
+            //Escrever código
+            var contaEncontrada = await _context.Contas.FirstOrDefaultAsync(c => c.Id.Equals(id));
 
             if (contaEncontrada is null)
                 return Resultadoservice.NaoEncontrado;
@@ -131,10 +136,10 @@ namespace WebServiceApi.Services
             return Resultadoservice.Ok;
         }
 
-        public Conta BuscaPorAgenciaConta(int agencia, int numero) // não faça alterações aqui...
+        public async Task<Conta> BuscaPorAgenciaConta(int agencia, int numero) // não faça alterações aqui...
         {
-            var conta = _context.Contas.
-                FirstOrDefault(c => c.Agencia == agencia && c.NumeroConta == numero);
+            var conta = await _context.Contas.
+                FirstOrDefaultAsync(c => c.Agencia == agencia && c.NumeroConta == numero);
             return conta;
         }
     }

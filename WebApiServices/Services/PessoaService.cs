@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using WebApi.DataBaseConection;
 using WebApi.Models;
 using WebApiModels.Models.Enums;
@@ -23,35 +25,40 @@ namespace WebServiceApi.Services
             
         }
 
-        public Pessoa Create(Pessoa pessoa)
+        public async Task<List<Pessoa>> GetAll()
+        {
+            return await _context.Pessoas.ToListAsync();
+        }
+
+        public async Task<Pessoa> Create(Pessoa pessoa)
         {
 
             pessoa.Contas = new List<Conta>();
 
             pessoa.Id = Guid.NewGuid().ToString();
-            _context.Pessoas.Add(pessoa);
-            _context.SaveChanges();
+            await _context.Pessoas.AddAsync(pessoa);
+            await _context.SaveChangesAsync();
 
             return pessoa;
         }
 
-        public Pessoa BuscaPorId(string id)
+        public async Task<Pessoa> BuscaPorId(string id)
         {
-            var pessoa = _context.Pessoas.FirstOrDefault(x => x.Id.Equals(id));
+            var pessoa = await _context.Pessoas.FirstOrDefaultAsync(x => x.Id.Equals(id));
 
             return pessoa;
         }
 
-        public Resultadoservice DeletarPorId(string id)
+        public async Task<Resultadoservice> DeletarPorId(string id)
         {
-            Pessoa p = BuscaPorId(id);
+            Pessoa p = await BuscaPorId(id);
 
             if (p is null)
             {
                 return Resultadoservice.NaoEncontrado;
             }
 
-            var buscaContas = _contaService.BuscarContasPorPessoaId(id);
+            var buscaContas = await _contaService.BuscarContasPorPessoaId(id);
             p.Contas = buscaContas;
 
             if (p.Contas.Count > 0)
@@ -60,36 +67,36 @@ namespace WebServiceApi.Services
             }
 
             _context.Pessoas.Remove(p);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Resultadoservice.Ok;
         }
 
-        public Pessoa BuscarPorId(string id)
+        public async Task<Pessoa> BuscarPorId(string id)
         {
-            Pessoa p = BuscaPorId(id);
+            Pessoa p = await BuscaPorId(id);
 
             if (p is null)
             {
                 return null;
             }
 
-            var listaContas = _contaService.BuscarContasPorPessoaId(p.Id);
+            var listaContas = await _contaService.BuscarContasPorPessoaId(p.Id);
 
             p.Contas = listaContas;
 
             foreach (var conta in listaContas)
             {
-                var listaTransacoes = _transacaoService.BuscarTransacoesPorIdConta(conta.Id);
+                var listaTransacoes = await _transacaoService.BuscarTransacoesPorIdConta(conta.Id);
                 conta.Transacoes = listaTransacoes;
             }
 
             return p;
         }
 
-        public Pessoa ResultadoCriarPessoa(Pessoa pessoa)
+        public async Task<Pessoa> ResultadoCriarPessoa(Pessoa pessoa)
         {
-            Pessoa p = Create(pessoa);
+            Pessoa p = await Create(pessoa);
             return p;
         }
     }

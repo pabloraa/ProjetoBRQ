@@ -1,8 +1,3 @@
-C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.csprojAssemblyReference.cache
-C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfoInputs.cache
-C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfo.cs
-C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
-C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -81,6 +76,11 @@ C:\Users\Pablo\source\repos\WebApplication7\WebApi\bin\Debug\netcoreapp3.1\WebAp
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\bin\Debug\netcoreapp3.1\Dominio.pdb
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\bin\Debug\netcoreapp3.1\WebApiModels.pdb
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\bin\Debug\netcoreapp3.1\WebApiRepositories.pdb
+C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.csprojAssemblyReference.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfoInputs.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.AssemblyInfo.cs
+C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CopyComplete
 C:\Users\Pablo\source\repos\WebApplication7\WebApi\obj\Debug\netcoreapp3.1\staticwebassets\WebApi.StaticWebAssets.Manifest.cache

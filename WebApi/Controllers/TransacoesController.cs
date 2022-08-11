@@ -10,6 +10,7 @@ using WebServiceApi.Services;
 using WebServiceApi.Interfaces;
 using WebApiModels.Models.Enums;
 using Recursos;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApi.Controllers
 {
@@ -31,16 +32,16 @@ namespace WebApi.Controllers
 
         [HttpGet]
         [Route("GetAll")]  
-        public IActionResult GetAll() 
+        public async Task<IActionResult> GetAll() 
         {
-            return Ok(_transacaoService.BuscarTransacoes());
+            return Ok(await _transacaoService.BuscarTransacoes());
         }
 
         [HttpGet]
         [Route("GetById/{idConta}")]  
-        public IActionResult GetById(string idConta)
+        public async Task<IActionResult> GetById(string idConta)
         {
-            var transacoes = _transacaoService.BuscarTransacoesPorIdConta(idConta);
+            var transacoes = await _transacaoService.BuscarTransacoesPorIdConta(idConta);
 
             if (transacoes.Count == 0)
                 return NotFound(Mensagens.TransacaoNaoEncontrada);
@@ -50,16 +51,27 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public IActionResult Create(Transacao transacao)
+        public async Task<IActionResult> Create(Transacao transacao)
         {
             if (transacao is null)
             {
                 return BadRequest(Mensagens.TransacaoNaoCriada);
             }
 
-            var t = _transacaoService.Create(transacao);  
+            var t = await _transacaoService.Create(transacao);  
             
             return Created("Transacao", t);
+        }
+
+        [HttpPut]
+        [Route("Atualizar/{id}")]
+        public async Task<IActionResult> Atualizar(string id,[FromBody] Transacao transacao)
+        {
+            var t = await _transacaoService.Atualizar(id, transacao);
+
+            if (t is null)
+                return BadRequest(Mensagens.TransacaoNaoEncontrada);
+            return Ok("Transacao Atualizada!");
         }
     }
 }

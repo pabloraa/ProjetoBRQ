@@ -33,23 +33,23 @@ namespace WebApi.Controllers
 
         [HttpPost]
         [Route("Create")]
-        public IActionResult Create(Pessoa pessoa)
+        public async Task<IActionResult> Create(Pessoa pessoa)
         {
-            Pessoa p = _pessoaService.Create(pessoa);
+            Pessoa p = await _pessoaService.Create(pessoa);
             return Created("Pessoa", p);
         } 
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_context.Pessoas);
+            return Ok(await _pessoaService.GetAll());
         }
 
         [HttpGet]
         [Route("GetByPessoaId/{id}")]
-        public IActionResult BuscaPorId(string id)
+        public async Task<IActionResult> BuscaPorId(string id)
         {
-            var pessoa = _pessoaService.BuscarPorId(id);
+            var pessoa = await _pessoaService.BuscarPorId(id);
 
             if(pessoa is null)
             {
@@ -61,10 +61,10 @@ namespace WebApi.Controllers
 
         [HttpDelete]
         [Route("DeletarPorId/{id}")]
-        public IActionResult DeletarPorId(string id)
+        public async Task<IActionResult> DeletarPorId(string id)
         {
 
-           Resultadoservice resultado = _pessoaService.DeletarPorId(id);
+           Resultadoservice resultado = await _pessoaService.DeletarPorId(id);
 
             if(resultado == Resultadoservice.NaoEncontrado)
             {

@@ -46,16 +46,16 @@ namespace WebApi.Controllers
 
         [HttpGet]
         [Route("GetAll")]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAll()
         {
-            return Ok(_context.Contas);
+            return Ok(await _contaService.GetAll());
         }
 
         [HttpGet]
         [Route("GetByIdCliente/{idCliente}")]
-        public IActionResult BuscarPorId(string idCliente)
+        public async Task<IActionResult> BuscarPorId(string idCliente)
         {
-            var conta = _contaService.BuscarContaPorIdCliente(idCliente);
+            var conta = await _contaService.BuscarContaPorIdCliente(idCliente);
 
             if (conta is null)
             {
@@ -66,9 +66,9 @@ namespace WebApi.Controllers
 
         [HttpGet]
         [Route("GetById/{idConta}")]
-        public IActionResult Read(string idConta)
+        public async Task<IActionResult> Read(string idConta)
         {
-            var conta = _contaService.BuscarContaPorIdConta(idConta);
+            var conta = await _contaService.BuscarContaPorIdConta(idConta);
             
             if (conta is null)
             {
@@ -80,9 +80,9 @@ namespace WebApi.Controllers
 
         [HttpGet]
         [Route("GetByConta")]
-        public IActionResult BuscaPorConta(int agencia, int numeroConta)
+        public async Task<IActionResult> BuscaPorConta(int agencia, int numeroConta)
         {
-            var conta = _contaService.BuscarContaPorAgenciaENumero(agencia,numeroConta);
+            var conta = await _contaService.BuscarContaPorAgenciaENumero(agencia,numeroConta);
 
             if (conta is null)
             {
@@ -94,23 +94,23 @@ namespace WebApi.Controllers
 
         [HttpPut]
         [Route("Atualizar/{idConta}")]
-        public IActionResult Put(string idConta, [FromBody] Conta conta)
+        public async Task<IActionResult> Put(string idConta, [FromBody] Conta conta)
         {
             if (conta is null)
             {
                 return BadRequest(Mensagens.ContaNaoInformada);
             }
 
-            var contaEncontrada = _contaService.AtualizarPorId(idConta,conta);
+            var contaEncontrada = await _contaService.AtualizarPorId(idConta,conta);
 
             return Ok(contaEncontrada); 
         }
         
         [HttpDelete]
         [Route("DeletarPorIdConta/{id}")]
-        public IActionResult DeletarPorIdConta(string id)
+        public async Task<IActionResult> DeletarPorIdConta(string id)
         {
-            Resultadoservice resultado = _contaService.DeletarContaPorId(id);
+            Resultadoservice resultado = await _contaService.DeletarContaPorId(id);
 
             if(resultado == Resultadoservice.NaoEncontrado)
             {

@@ -1,7 +1,3 @@
-C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.csprojAssemblyReference.cache
-C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.AssemblyInfoInputs.cache
-C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.AssemblyInfo.cs
-C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\bin\Debug\netcoreapp3.1\WebApiServices.deps.json
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\bin\Debug\netcoreapp3.1\WebApiServices.dll
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\bin\Debug\netcoreapp3.1\WebApiServices.pdb
@@ -13,6 +9,10 @@ C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\bin\Debug\netcoreapp3
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\bin\Debug\netcoreapp3.1\WebApiRepositories.pdb
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\bin\Debug\netcoreapp3.1\Dominio.pdb
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\bin\Debug\netcoreapp3.1\Recursos.pdb
+C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.csprojAssemblyReference.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.AssemblyInfoInputs.cache
+C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.AssemblyInfo.cs
+C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.csproj.CopyComplete
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.dll
 C:\Users\Pablo\source\repos\WebApplication7\WebApiServices\obj\Debug\netcoreapp3.1\WebApiServices.pdb
