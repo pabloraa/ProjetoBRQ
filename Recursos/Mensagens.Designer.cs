@@ -106,6 +106,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Data de Nascimento não pode ser nula.
+        /// </summary>
+        public static string DataNascimentoNaoNula {
+            get {
+                return ResourceManager.GetString("DataNascimentoNaoNula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Excluído com Sucesso.
         /// </summary>
         public static string ExcluidoComSucesso {

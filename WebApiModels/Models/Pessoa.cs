@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WebApiModels.Models.Validacao;
 
 namespace WebApi.Models
 {
@@ -11,6 +12,7 @@ namespace WebApi.Models
 
         public string Nome { get; set; }
 
+        [ValidarDataNascimento]
         public DateTime DataNascimento { get; set; }         
 
         [ValidarCpf]

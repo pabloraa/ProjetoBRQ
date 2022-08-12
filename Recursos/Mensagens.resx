@@ -132,6 +132,9 @@
   <data name="CpfNaoNulo" xml:space="preserve">
     <value>Cpf Não pode ser nulo</value>
   </data>
+  <data name="DataNascimentoNaoNula" xml:space="preserve">
+    <value>Data de Nascimento não pode ser nula</value>
+  </data>
   <data name="ExcluidoComSucesso" xml:space="preserve">
     <value>Excluído com Sucesso</value>
   </data>
