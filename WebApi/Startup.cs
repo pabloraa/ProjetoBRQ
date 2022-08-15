@@ -45,7 +45,6 @@ namespace WebApi
 
             services.AddScoped<IPessoaService, PessoaService>();
             services.AddScoped<IRepositoryPessoa, RepositoryPessoa>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

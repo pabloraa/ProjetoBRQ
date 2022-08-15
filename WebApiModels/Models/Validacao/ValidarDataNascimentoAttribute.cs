@@ -9,16 +9,19 @@ namespace WebApiModels.Models.Validacao
 {
     public class ValidarDataNascimentoAttribute : ValidationAttribute 
     {
+        private const int menorIdade = -18;
+        private const int anoMinimo = 1900;
+
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
             if (value is null)
                 return new ValidationResult(Mensagens.DataNascimentoNaoNula);
-            var data = value.ToString();
-            DateTime resultado = DateTime.ParseExact(data,"yyyy-MM-dd",CultureInfo.InvariantCulture);
-            var resultado2 = resultado.ToString();
+            DateTime resultado = DateTime.Parse(value.ToString());
+            if (resultado.Year <= anoMinimo)
+                return new ValidationResult(Mensagens.AnoNaoPermitido);
+            if (resultado > DateTime.Now.AddYears(menorIdade))
+                return new ValidationResult(Mensagens.MenorDeIdade);
 
-            if (resultado2.Length <=10)
-                return new ValidationResult("Quantidades de caracteres diferentes de 10");
             return ValidationResult.Success; 
         }
     }

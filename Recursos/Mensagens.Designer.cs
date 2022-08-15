@@ -61,6 +61,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Ano não permitido.
+        /// </summary>
+        public static string AnoNaoPermitido {
+            get {
+                return ResourceManager.GetString("AnoNaoPermitido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Cliente Não Encontrada.
         /// </summary>
         public static string ClienteNaoEncontrado {
@@ -129,6 +138,15 @@ namespace Recursos {
         public static string FaltaCliente {
             get {
                 return ResourceManager.GetString("FaltaCliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Você não tem idade para ter conta bancária.
+        /// </summary>
+        public static string MenorDeIdade {
+            get {
+                return ResourceManager.GetString("MenorDeIdade", resourceCulture);
             }
         }
         
