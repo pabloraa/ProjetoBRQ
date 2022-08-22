@@ -169,6 +169,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a A primeira letra deve ser maiúscula.
+        /// </summary>
+        public static string PrimeiraLetraMaiuscula {
+            get {
+                return ResourceManager.GetString("PrimeiraLetraMaiuscula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Transacao Não Criada.
         /// </summary>
         public static string TransacaoNaoCriada {

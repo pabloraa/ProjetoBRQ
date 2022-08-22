@@ -484,7 +484,11 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.1.0, )"
+              "version": "[11.2.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[11.2.1, )"
             },
             "Microsoft.AspNet.WebApi.Core": {
               "target": "Package",

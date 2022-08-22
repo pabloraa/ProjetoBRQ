@@ -153,6 +153,9 @@
   <data name="PessoaNaoCriada" xml:space="preserve">
     <value>Pessoa Não Criada</value>
   </data>
+  <data name="PrimeiraLetraMaiuscula" xml:space="preserve">
+    <value>A primeira letra deve ser maiúscula</value>
+  </data>
   <data name="TransacaoNaoCriada" xml:space="preserve">
     <value>Transacao Não Criada</value>
   </data>

@@ -17,7 +17,10 @@ using WebServiceApi.Interfaces;
 using WebServiceApi.Respositoty;
 using WebServiceApi.Services;
 using MySql.Data.MySqlClient;
-
+using FluentValidation.AspNetCore;
+using WebApi.Models;
+using WebApiModels.Models.Validacao;
+using FluentValidation;
 
 namespace WebApi
 {
@@ -30,11 +33,21 @@ namespace WebApi
 
         public IConfiguration Configuration { get; }
 
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("MeuBancoDeDados"));            
-            services.AddControllers();
+
+            services.AddControllers()
+                .AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+            services.AddScoped<IValidator<Pessoa>, PessoaValidator>();
+            //services.AddScoped<IValidator<Transacao>, TransacaoValidator>();
+            services.AddScoped<IValidator<Conta>, ContaValidator>();
+
+            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("MeuBancoDeDados"));
+            //services.AddControllers();
+            
 
             services.AddDbContext<ApiContext>(opt => opt.UseSqlServer(@"Server = DESKTOP-10HCQPV\SQLEXPRESS; Database = ExemploBD; Trusted_Connection = True;"));
             services.AddScoped<IRepositoryConta, RepositoryConta>();
@@ -61,6 +74,7 @@ namespace WebApi
 
             app.UseAuthorization();
 
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

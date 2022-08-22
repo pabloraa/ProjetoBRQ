@@ -24,7 +24,8 @@
     ".NETCoreApp,Version=v3.1": {
       "WebApi/1.0.0": {
         "dependencies": {
-          "FluentValidation": "11.1.0",
+          "FluentValidation": "11.2.0",
+          "FluentValidation.AspNetCore": "11.2.1",
           "Microsoft.AspNet.WebApi.Core": "5.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.26",
           "Microsoft.EntityFrameworkCore.InMemory": "3.1.26",
@@ -310,15 +311,45 @@
           "WebApi.dll": {}
         }
       },
-      "FluentValidation/11.1.0": {
+      "FluentValidation/11.2.0": {
         "runtime": {
           "lib/netstandard2.1/FluentValidation.dll": {
             "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.1.0.0"
+            "fileVersion": "11.2.0.0"
           }
         },
         "compile": {
           "lib/netstandard2.1/FluentValidation.dll": {}
+        }
+      },
+      "FluentValidation.AspNetCore/11.2.1": {
+        "dependencies": {
+          "FluentValidation": "11.2.0",
+          "FluentValidation.DependencyInjectionExtensions": "11.2.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.2.1.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/FluentValidation.AspNetCore.dll": {}
+        }
+      },
+      "FluentValidation.DependencyInjectionExtensions/11.2.0": {
+        "dependencies": {
+          "FluentValidation": "11.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.26"
+        },
+        "runtime": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/FluentValidation.DependencyInjectionExtensions.dll": {}
         }
       },
       "Google.Protobuf/3.19.4": {
@@ -1574,7 +1605,7 @@
       },
       "Dominio/1.0.0": {
         "dependencies": {
-          "FluentValidation": "11.1.0"
+          "FluentValidation": "11.2.0"
         },
         "runtime": {
           "Dominio.dll": {}
@@ -1585,7 +1616,7 @@
       },
       "Recursos/1.0.0": {
         "dependencies": {
-          "FluentValidation": "11.1.0",
+          "FluentValidation": "11.2.0",
           "MySql.Data": "8.0.30",
           "Pomelo.EntityFrameworkCore.MySql": "3.2.7"
         },
@@ -1599,7 +1630,7 @@
       "WebApiModels/1.0.0": {
         "dependencies": {
           "Dominio": "1.0.0",
-          "FluentValidation": "11.1.0",
+          "FluentValidation": "11.2.0",
           "MySql.Data": "8.0.30",
           "Pomelo.EntityFrameworkCore.MySql": "3.2.7",
           "Recursos": "1.0.0"
@@ -1613,7 +1644,7 @@
       },
       "WebApiRepositories/1.0.0": {
         "dependencies": {
-          "FluentValidation": "11.1.0",
+          "FluentValidation": "11.2.0",
           "Microsoft.EntityFrameworkCore": "3.1.26",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.26",
           "MySql.Data": "8.0.30",
@@ -1629,7 +1660,7 @@
       },
       "WebApiServices/1.0.0": {
         "dependencies": {
-          "FluentValidation": "11.1.0",
+          "FluentValidation": "11.2.0",
           "Microsoft.AspNet.WebApi.Core": "5.0.0",
           "MySql.Data": "8.0.30",
           "Pomelo.EntityFrameworkCore.MySql": "3.2.7",
@@ -3260,12 +3291,26 @@
       "serviceable": false,
       "sha512": ""
     },
-    "FluentValidation/11.1.0": {
+    "FluentValidation/11.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ld7w+2jOmnhQqFkngEGuEWTRa5j6u4Xzli7jKxRtbA5PtuHHcpin01qxvxYL0LomeJuzRMGAOURu2rKONdjKQA==",
-      "path": "fluentvalidation/11.1.0",
-      "hashPath": "fluentvalidation.11.1.0.nupkg.sha512"
+      "sha512": "sha512-KV1YBM8T4plLKmShjxfmHMF6X1lDuXgyqE+t8NYNxb7jmMbPnA3u30RsuXAf2NYMv0TBCUQguI2Z6W17c/Dh1A==",
+      "path": "fluentvalidation/11.2.0",
+      "hashPath": "fluentvalidation.11.2.0.nupkg.sha512"
+    },
+    "FluentValidation.AspNetCore/11.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vtwfqQkQkM1UjG2V7+3TJrhqpnnBR3ciQSufj3M2wim85BaHpC+GG6cUGlzP14NvLhi1RL5ejlpQdFok6ILIpw==",
+      "path": "fluentvalidation.aspnetcore/11.2.1",
+      "hashPath": "fluentvalidation.aspnetcore.11.2.1.nupkg.sha512"
+    },
+    "FluentValidation.DependencyInjectionExtensions/11.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-55xipVg5TvAvnod7QqOw5ewMp2FpZ42iwKsJ4iAoxtlXD33CtdKm7h1JDPTE5aD1ODLEqfaUijqqCqO4f5Wx9Q==",
+      "path": "fluentvalidation.dependencyinjectionextensions/11.2.0",
+      "hashPath": "fluentvalidation.dependencyinjectionextensions.11.2.0.nupkg.sha512"
     },
     "Google.Protobuf/3.19.4": {
       "type": "package",
