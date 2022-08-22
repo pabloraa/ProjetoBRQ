@@ -18,12 +18,12 @@ namespace WebApi.Controllers
     [Route("api/[controller]")]
     public class ContaController : ControllerBase
     {
-        private ApiContext _context;
+        
         private IContaService _contaService;
 
-        public ContaController(ApiContext context, IContaService contaService)
+        public ContaController(IContaService contaService)
         {
-            _context = context;
+            
             _contaService = contaService;
         }
 

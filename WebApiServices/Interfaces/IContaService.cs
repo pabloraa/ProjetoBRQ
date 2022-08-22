@@ -10,22 +10,6 @@ namespace WebServiceApi.Interfaces
 {
     public interface IContaService
     {
-        //public Conta BuscarContaPorIdConta(string idConta);
-
-        //public Conta BuscarContaPorAgenciaENumero(int agencia, int numeroConta);
-        
-        //public Resultadoservice DeletarContaPorId(string id);
-
-       // public Conta BuscaPorAgenciaConta(int agencia, int numero);
-
-        //public Conta AtualizarPorId(string id, Conta conta);
-
-        //public List<Conta> BuscarContasPorPessoaId(string id);
-
-        //public Conta BuscarContaPorIdCliente(string idCliente);
-
-       // public Conta BuscarContaPorIdConta(string idConta);
-
         public Task<Conta> Create(Conta conta);
 
         public Task<Conta> BuscarContaPorIdCliente(string idCliente);

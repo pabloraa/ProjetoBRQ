@@ -10,20 +10,6 @@ namespace WebServiceApi.Interfaces
 {
     public interface ITransacaoService
     {
-        //public List<Transacao> BuscarTransacoes();
-
-        //public Transacao VerificarPorId(string id);
-
-        //public Transacao VerificarTransacao(Transacao transacao);
-
-        //public ResultadoTransacoes BuscaTransacoesPorId(string id);
-
-        //public List<Transacao> BuscarTransacoesPorIdConta(string idConta);
-
-        //public Transacao Create(Transacao transacao);
-
-        //public Transacao VerificarTransacao(Transacao transacao);
-
         public Task<List<Transacao>> BuscarTransacoesPorIdConta(string idConta);
 
         public Task<Transacao> VerificarTransacao(Transacao transacao);

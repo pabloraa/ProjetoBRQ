@@ -9,16 +9,6 @@ namespace WebServiceApi.Interfaces
 {
     public interface IPessoaService
     {
-        //public Pessoa Create(Pessoa pessoa);
-
-        //public Pessoa BuscaPorId(string id);
-
-        //public Resultadoservice DeletarPorId(string id);
-
-        //public Pessoa BuscarPorId(string id);
-
-        //public Pessoa ResultadoCriarPessoa(Pessoa pessoa);
-
         public Task<Pessoa> Create(Pessoa pessoa);
 
         public Task<Pessoa> BuscaPorId(string id);
