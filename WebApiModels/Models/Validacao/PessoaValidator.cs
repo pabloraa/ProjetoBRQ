@@ -11,7 +11,7 @@ namespace WebApiModels.Models.Validacao
 {
     public class PessoaValidator : AbstractValidator<Pessoa>
     {
-        private const string expressao = @"^[a-zA-Z\s]+$";
+        private const string expressao2 = @"[0-9&_.\-@]"; //Regex para validar letras.
 
         public PessoaValidator()
         {
@@ -31,13 +31,7 @@ namespace WebApiModels.Models.Validacao
 
         public static bool ValidadorLetras(string caractere)
         {
-            //return new Regex(expressao).IsMatch(caractere)? true:false;
-
-            //return new Regex(expressao).IsMatch(caractere);
-
-            if (!new Regex(expressao).IsMatch(caractere))
-                return true;
-            return false;
+            return !(new Regex(expressao2).IsMatch(caractere));
         }
     }
 }
