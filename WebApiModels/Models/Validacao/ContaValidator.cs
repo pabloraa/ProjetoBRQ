@@ -10,6 +10,7 @@ namespace WebApiModels.Models.Validacao
     public class ContaValidator : AbstractValidator<Conta>
     {
         private const string expressao = @"[0-9]";
+        private const string expressao2 = @"[^(\d*\d{4})$]";
 
         public ContaValidator()
         {
@@ -30,12 +31,14 @@ namespace WebApiModels.Models.Validacao
         public static bool ValidarNumeros(int numero)
         {
             Regex num = new Regex(expressao);
+            Regex num2 = new Regex(expressao2);
 
             //if (numero.Equals(num))
             //    return false;
             //return true;
 
-            return numero.Equals(num)?false:true;
+            //return numero.Equals(num)?false:true; //operador ternário
+            return numero.Equals(num2) ? false : true;
             //return (new Regex(expressao).IsMatch(numero.ToString()));
         }
     }
