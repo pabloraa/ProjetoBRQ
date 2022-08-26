@@ -35,7 +35,7 @@ namespace WebApi.Controllers
             {
                 return BadRequest(Mensagens.ContaNaoInformada);
             }
-            if(conta.PessoaId.Equals(Guid.Empty))
+            if(string.IsNullOrEmpty(conta.PessoaId))
             {
                 return NotFound(Mensagens.FaltaCliente);
             }
