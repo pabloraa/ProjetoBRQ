@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using WebApi.Controllers;
 using WebApi.DataBaseConection;
 using WebApi.Models;
+using WebApiModels.Models.Enums;
 using WebServiceApi.Interfaces;
 using Xunit;
 
@@ -86,6 +87,7 @@ namespace Testes
             conta.Agencia = 1452;
             conta.NumeroConta = 1234;
             conta.Ativo = true;
+            conta.Id = "cc210d81-3b38-41da-93e6-eadf4ef71047";
 
             return conta;
         }
@@ -126,7 +128,148 @@ namespace Testes
             Assert.Equal(contaEsperada,response.Value);
         }
 
+        [Fact]
+        public async Task GetByIdContaNotFound()  //pablo
+        {
+            //configurar
+           
+            string idConta = "";
+            
+            _contaService.BuscarContaPorIdConta(idConta).ReturnsNull();
 
+            //executar
+            var response = (NotFoundObjectResult)await _contaController.Read(idConta);
 
+            //validar
+
+            Assert.NotNull(response);
+            Assert.Equal(404, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ClienteNaoEncontrado,response.Value);
+        }
+
+        [Fact]
+        public async Task GetByIdContaOk()//pablo
+        {
+            //configurar
+            var contaEncontrada = InstanciarUmaConta();
+            string idConta = "";
+
+            _contaService.BuscarContaPorIdConta(idConta).Returns(contaEncontrada);
+
+            //executar
+
+            var response = (OkObjectResult)await _contaController.Read(idConta);
+
+            //validar
+
+            Assert.NotNull(response);
+            Assert.Equal(200, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(contaEncontrada,response.Value);
+        }
+
+        [Fact]
+        public async Task GetByContaNotFound()  //Pablo
+        {
+            //configurar         
+            int agencia = 1452;
+            int numeroConta = 1234;
+            _contaService.BuscarContaPorAgenciaENumero(agencia,numeroConta).ReturnsNull();
+
+            //executar
+            var response = (NotFoundObjectResult)await _contaController.BuscaPorConta(agencia,numeroConta);
+
+            //validar
+
+            Assert.NotNull(response);
+            Assert.Equal(404, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ContaNaoEncontrada,response.Value);
+        }
+
+        [Fact]
+        public async Task GetByContaOk() //pablo, está com erro
+        {
+            //configurar
+            var contaEncontrada = InstanciarUmaConta();
+            int agencia = 1452;
+            int numeroConta = 1234;
+            _contaService.BuscarContaPorAgenciaENumero(agencia, numeroConta).Returns(contaEncontrada);
+
+            //executar
+            var response = (OkObjectResult)await _contaController.BuscaPorConta(agencia,numeroConta);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(200, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(contaEncontrada,response.Value);
+        }
+
+        [Fact]
+        public async Task AtualizarNotFound() //pablo
+        {
+            //configurar
+            string id = "";
+            var contaEncontrada = InstanciarUmaConta();
+
+            _contaService.AtualizarPorId(id,null).ReturnsNull();
+
+            //executar
+            var response = (BadRequestObjectResult)await _contaController.Put(id,null);
+
+            //validar
+
+            Assert.NotNull(response);
+            Assert.Equal(400,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ContaNaoInformada,response.Value);
+        }
+
+        [Fact]
+        public async Task AtualizarOk()
+        {
+            //configurar
+            var contaEncontrada = InstanciarUmaConta();
+            string id = "";
+            _contaService.AtualizarPorId(id, contaEncontrada).Returns(contaEncontrada);
+
+            //executar
+            var response = (OkObjectResult)await _contaController.Put(id, contaEncontrada);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(200,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(contaEncontrada,response.Value);
+        }
+
+        [Fact]
+        public async Task DeletarNotFound()
+        {
+            //configurar
+            string id = "";
+            _contaService.DeletarContaPorId(id).Returns(Resultadoservice.NaoEncontrado);
+
+            //executar
+            var response = (NotFoundObjectResult)await _contaController.DeletarPorIdConta(id);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(404,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ContaNaoEncontrada,response.Value);
+        }
+
+        [Fact]
+        public async Task DeletarOk()
+        {
+            //configurar
+            string id = "";
+            var contaEncontrada = InstanciarUmaConta();
+            _contaService.DeletarContaPorId(id).Returns();
+
+            //executar
+            var response = (OkObjectResult)await _contaController.DeletarPorIdConta(id);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(200, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ContaRemovida, response.Value);
+        } 
     }
 }
