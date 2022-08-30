@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using NSubstitute;
+using NSubstitute.ReturnsExtensions;
 using Recursos;
 using System.Net;
 using System.Threading.Tasks;
@@ -88,5 +89,44 @@ namespace Testes
 
             return conta;
         }
+
+        [Fact]
+        public async Task GetByClienteIdRetornaNotFound()
+        {
+            //configurar
+            string id = "";
+            _contaService.BuscarContaPorIdCliente(id)
+                .ReturnsNull();
+
+            //executar
+            var response = (NotFoundObjectResult)await _contaController.BuscarPorId(id);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(404,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ClienteNaoEncontrado,response.Value);
+        }
+
+        [Fact]
+        public async Task GetByClienteIdRetornaOk()
+        {
+            //configurar
+
+            var contaEsperada = InstanciarUmaConta();
+
+            string id = "";
+            _contaService.BuscarContaPorIdCliente(id).Returns(contaEsperada);
+
+            //executar
+            var response = (OkObjectResult)await _contaController.BuscarPorId(id);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(200, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(contaEsperada,response.Value);
+        }
+
+
+
     }
 }
