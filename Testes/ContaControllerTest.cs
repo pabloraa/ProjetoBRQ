@@ -259,9 +259,10 @@ namespace Testes
         public async Task DeletarOk()
         {
             //configurar
-            string id = "";
             var contaEncontrada = InstanciarUmaConta();
-            _contaService.DeletarContaPorId(id).Returns();
+            string id = "";
+            
+            _contaService.DeletarContaPorId(id).Returns(Resultadoservice.Encontrado);
 
             //executar
             var response = (OkObjectResult)await _contaController.DeletarPorIdConta(id);
