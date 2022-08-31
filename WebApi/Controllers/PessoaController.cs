@@ -22,6 +22,7 @@ namespace WebApi.Controllers
         private IPessoaService _pessoaService;
         private IContaService _contaService;
         private ITransacaoService _transacaoService;
+        private IPessoaService pessoaService;
 
         public PessoaController(ApiContext context, IPessoaService pessoaService, IContaService contaService, ITransacaoService transacaoService)
         {
@@ -29,6 +30,11 @@ namespace WebApi.Controllers
             _pessoaService = pessoaService;
             _contaService = contaService;
             _transacaoService = transacaoService;
+        }
+
+        public PessoaController(IPessoaService pessoaService)
+        {
+            this.pessoaService = pessoaService;
         }
 
         [HttpPost]
