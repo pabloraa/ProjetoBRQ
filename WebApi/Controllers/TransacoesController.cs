@@ -21,12 +21,10 @@ namespace WebApi.Controllers
     public class TransacoesController : ControllerBase //somente backend
     {
 
-        private ApiContext _context;
         private ITransacaoService _transacaoService;
 
-        public TransacoesController(ApiContext context, ITransacaoService transacaoService)
+        public TransacoesController( ITransacaoService transacaoService)
         {
-            _context = context;
             _transacaoService = transacaoService;
         }
 

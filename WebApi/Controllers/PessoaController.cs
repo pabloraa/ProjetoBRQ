@@ -17,25 +17,17 @@ namespace WebApi.Controllers
 
     public class PessoaController : ControllerBase
     {
-
-        private ApiContext _context;
-        private IPessoaService _pessoaService;
         private IContaService _contaService;
         private ITransacaoService _transacaoService;
-        private IPessoaService pessoaService;
+        private IPessoaService _pessoaService;
 
-        public PessoaController(ApiContext context, IPessoaService pessoaService, IContaService contaService, ITransacaoService transacaoService)
+        public PessoaController( IPessoaService pessoaService, IContaService contaService, ITransacaoService transacaoService)
         {
-            _context = context;
             _pessoaService = pessoaService;
             _contaService = contaService;
             _transacaoService = transacaoService;
         }
 
-        public PessoaController(IPessoaService pessoaService)
-        {
-            this.pessoaService = pessoaService;
-        }
 
         [HttpPost]
         [Route("Create")]

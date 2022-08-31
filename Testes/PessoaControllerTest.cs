@@ -17,18 +17,35 @@ namespace Testes
     {
         private readonly PessoaController _pessoaController;
         private readonly IPessoaService _pessoaService;
+        private readonly IContaService _contaService;
+        private readonly ITransacaoService _transacaoService;
+        
 
         public PessoaControllerTest()
         {
             _pessoaService = Substitute.For<IPessoaService>();
+            _contaService = Substitute.For<IContaService>();
+            _transacaoService = Substitute.For<ITransacaoService>();
+            
 
-            _pessoaController = new PessoaController(_pessoaService);
+            _pessoaController = new PessoaController(_pessoaService,_contaService,_transacaoService);
         }
 
 
         [Fact]
-        public async Task Create()
+        public async Task CreatePessoaOk()
         {
+            //configurar
+            var pessoa = InstanciarUmaPessoa();
+            var esperado = InstanciarUmaPessoa();
+            _pessoaService.Create(pessoa).Returns(esperado);
+            //executar
+            var response = (CreatedResult)await _pessoaController.Create(pessoa);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(201,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(esperado,response.Value);
 
         }
 

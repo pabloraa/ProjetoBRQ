@@ -23,7 +23,6 @@ namespace WebApi.Controllers
 
         public ContaController(IContaService contaService)
         {
-            
             _contaService = contaService;
         }
 
