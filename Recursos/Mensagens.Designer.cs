@@ -160,11 +160,29 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a PessoaAtualizada.
+        /// </summary>
+        public static string PessoaAtualizada {
+            get {
+                return ResourceManager.GetString("PessoaAtualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Pessoa Não Criada.
         /// </summary>
         public static string PessoaNaoCriada {
             get {
                 return ResourceManager.GetString("PessoaNaoCriada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Pessoa Não Encontrada.
+        /// </summary>
+        public static string PessoaNaoEncontrada {
+            get {
+                return ResourceManager.GetString("PessoaNaoEncontrada", resourceCulture);
             }
         }
         

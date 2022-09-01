@@ -76,5 +76,15 @@ namespace WebApi.Controllers
 
             return Ok(Mensagens.ExcluidoComSucesso);
         }
+
+        [HttpPut]
+        [Route("AtualizarPorId/{id}")]
+        public async Task<IActionResult> AtualizarPessoa(string id,[FromBody] Pessoa pessoa)
+        {
+            var p = await _pessoaService.AtualizarPessoa(id, pessoa);
+            if (p is null)
+                return NotFound(Mensagens.PessoaNaoEncontrada);
+            return Ok(Mensagens.PessoaAtualizada);
+        }
     }
 }

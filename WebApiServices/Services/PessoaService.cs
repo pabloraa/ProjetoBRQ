@@ -99,5 +99,19 @@ namespace WebServiceApi.Services
             Pessoa p = await Create(pessoa);
             return p;
         }
+
+        public async Task<Pessoa> AtualizarPessoa(string id, Pessoa pessoa)
+        {
+            var pessoaEncontrada = await _context.Pessoas.FirstOrDefaultAsync(
+                p=>p.Id.Equals(id));
+            if (pessoaEncontrada is null)
+                return null;
+            pessoaEncontrada.Nome = pessoa.Nome;
+            pessoaEncontrada.DataNascimento = pessoa.DataNascimento;
+            pessoaEncontrada.Cpf = pessoa.Cpf;
+            _context.Entry(pessoaEncontrada).State = EntityState.Modified;
+            _context.SaveChanges();
+            return pessoaEncontrada;
+        }
     }
 }

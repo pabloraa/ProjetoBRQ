@@ -132,6 +132,39 @@ namespace Testes
             Assert.Equal(Mensagens.NaoPodeExcluir,response.Value);
         }
 
+        [Fact]
+        public async Task AtualizarPessoaOk()
+        {
+            //configurar
+            string id = "";
+            var pessoaEncontrada = InstanciarUmaPessoa();
+            _pessoaService.AtualizarPessoa(id, pessoaEncontrada).Returns(pessoaEncontrada);
+
+            //executar
+            var response = (OkObjectResult)await _pessoaController.AtualizarPessoa(id, pessoaEncontrada);
+            //validar
+
+            Assert.NotNull(response);
+            Assert.Equal(200,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.PessoaAtualizada, response.Value);
+        }
+
+
+        [Fact]
+        public async Task AtualizarPessoaNotFound()
+        {
+            //configurar
+            string id = "";
+            var pessoaEncontrada = InstanciarUmaPessoa();
+            _pessoaService.AtualizarPessoa(id, pessoaEncontrada).ReturnsNull();
+            //executar
+            var response = (NotFoundObjectResult)await _pessoaController.AtualizarPessoa(id, pessoaEncontrada);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(404,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.PessoaNaoEncontrada,response.Value);
+        }
         public Pessoa InstanciarUmaPessoa()
         {
             Pessoa pessoa = new Pessoa();

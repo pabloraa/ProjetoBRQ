@@ -150,8 +150,14 @@
   <data name="NaoPodeExcluir" xml:space="preserve">
     <value>Essa Pessoa não pode ser removida</value>
   </data>
+  <data name="PessoaAtualizada" xml:space="preserve">
+    <value>PessoaAtualizada</value>
+  </data>
   <data name="PessoaNaoCriada" xml:space="preserve">
     <value>Pessoa Não Criada</value>
+  </data>
+  <data name="PessoaNaoEncontrada" xml:space="preserve">
+    <value>Pessoa Não Encontrada</value>
   </data>
   <data name="PrimeiraLetraMaiuscula" xml:space="preserve">
     <value>A primeira letra deve ser maiúscula</value>

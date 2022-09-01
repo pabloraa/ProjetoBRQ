@@ -20,5 +20,7 @@ namespace WebServiceApi.Interfaces
         public Task<Pessoa> ResultadoCriarPessoa(Pessoa pessoa);
 
         public Task<List<Pessoa>> GetAll();
+
+        public Task<Pessoa> AtualizarPessoa(string id, Pessoa pessoa);
     }
 }
