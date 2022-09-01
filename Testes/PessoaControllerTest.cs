@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebApi.Controllers;
 using WebApi.Models;
+using WebApiModels.Models.Enums;
 using WebServiceApi.Interfaces;
 using Xunit;
 
@@ -26,11 +27,8 @@ namespace Testes
             _pessoaService = Substitute.For<IPessoaService>();
             _contaService = Substitute.For<IContaService>();
             _transacaoService = Substitute.For<ITransacaoService>();
-            
-
             _pessoaController = new PessoaController(_pessoaService,_contaService,_transacaoService);
         }
-
 
         [Fact]
         public async Task CreatePessoaOk()
@@ -52,15 +50,18 @@ namespace Testes
         [Fact]
         public async Task GetAllOk()
         {
-         
+
+            //configurar
+
+
             //executar
             var response = (OkObjectResult)await _pessoaController.GetAll();
 
             //validar
 
             Assert.NotNull(response);
-            Assert.Equal(200,response.StatusCode.GetValueOrDefault());
-            
+            Assert.Equal(200, response.StatusCode.GetValueOrDefault());
+
         }
 
         [Fact]
@@ -69,7 +70,7 @@ namespace Testes
             //configurar
             string id = "";
             var pessoaEncontrada = InstanciarUmaPessoa();
-            _pessoaService.BuscaPorId(id).Returns(pessoaEncontrada);
+            _pessoaService.BuscarPorId(id).Returns(pessoaEncontrada);
 
             //executar
             var response = (OkObjectResult)await _pessoaController.BuscaPorId(id);
@@ -77,8 +78,8 @@ namespace Testes
             //validar
 
             Assert.NotNull(response);
-            Assert.Equal(200,response.StatusCode.GetValueOrDefault());
-            Assert.Equal(pessoaEncontrada,response.Value);
+            Assert.Equal(200, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(pessoaEncontrada, response.Value);
         }
 
         [Fact]
@@ -86,17 +87,51 @@ namespace Testes
         {
             //configurar
             string id = "";
-            _pessoaService.BuscaPorId(id).ReturnsNull();
+            _pessoaService.BuscarPorId(id).ReturnsNull();
 
             //executar
             var response = (NotFoundObjectResult)await _pessoaController.BuscaPorId(id);
 
             //validar
             Assert.NotNull(response);
-            Assert.Equal(404,response.StatusCode.GetValueOrDefault());
-            Assert.Equal(Mensagens.ClienteNaoEncontrado,response.Value);
+            Assert.Equal(404, response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ClienteNaoEncontrado, response.Value);
 
         }
+
+        [Fact]
+        public async Task DeletarPorIdNotFound() //erro
+        {
+            //configurar
+            string id = "";
+            _pessoaService.DeletarPorId(id).Returns(Resultadoservice.NaoEncontrado);
+
+            //executar
+            var response = (NotFoundObjectResult)await _pessoaController.DeletarPorId(id);
+
+            //validar
+
+            Assert.NotNull(response);
+            Assert.Equal(404,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.ClienteNaoEncontrado,response.Value);
+        }
+
+        [Fact]
+        public async Task DeletarPorIdOk()
+        {
+            //configurar
+            string id = "";
+            var pessoaEncontrada = InstanciarUmaPessoa();
+            _pessoaService.DeletarPorId(id).Returns(Resultadoservice.NaoPodeExcluir);
+            //executar
+            var response = (OkObjectResult)await _pessoaController.DeletarPorId(id);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(200,response.StatusCode.GetValueOrDefault());
+            Assert.Equal(Mensagens.NaoPodeExcluir,response.Value);
+        }
+
         public Pessoa InstanciarUmaPessoa()
         {
             Pessoa pessoa = new Pessoa();

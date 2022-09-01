@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "jqQcVoNRm+Rqh1vekf9UwreLlx32B21fA0Xukr2yhxllkOIaGdvqQZ4OUtyrq3UyrhHdF6Q0PHfKutGrcKv4HA==",
+  "dgSpecHash": "ZibWhYzKZpEVoShxdo2kk7a4e/1eqQo+o5P4nXkF1T7xgFsiFQXZHnL5owaip4WtucDEvHX/KfG7KyLNbjVKEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Pablo\\source\\repos\\WebApplication7\\Testes\\Testes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Pablo\\.nuget\\packages\\castle.core\\5.0.0\\castle.core.5.0.0.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
+    "C:\\Users\\Pablo\\.nuget\\packages\\coverlet.msbuild\\3.1.2\\coverlet.msbuild.3.1.2.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.1\\fluentvalidation.aspnetcore.11.2.1.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.0\\fluentvalidation.dependencyinjectionextensions.11.2.0.nupkg.sha512",
@@ -58,6 +59,7 @@
     "C:\\Users\\Pablo\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\3.2.7\\pomelo.entityframeworkcore.mysql.3.2.7.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\pomelo.jsonobject\\2.2.1\\pomelo.jsonobject.2.2.1.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
+    "C:\\Users\\Pablo\\.nuget\\packages\\reportgenerator\\5.1.9\\reportgenerator.5.1.9.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\Pablo\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

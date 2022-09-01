@@ -174,9 +174,19 @@
               "target": "Package",
               "version": "[4.4.0, )"
             },
+            "ReportGenerator": {
+              "target": "Package",
+              "version": "[5.1.9, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[1.2.0, )"
+            },
+            "coverlet.msbuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
             },
             "xunit": {
               "target": "Package",
