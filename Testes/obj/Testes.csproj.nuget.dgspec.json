@@ -151,6 +151,9 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "C:\\Users\\Pablo\\source\\repos\\WebApplication7\\WebApiModels\\WebApiModels.csproj": {
+                "projectPath": "C:\\Users\\Pablo\\source\\repos\\WebApplication7\\WebApiModels\\WebApiModels.csproj"
+              },
               "C:\\Users\\Pablo\\source\\repos\\WebApplication7\\WebApi\\WebApi.csproj": {
                 "projectPath": "C:\\Users\\Pablo\\source\\repos\\WebApplication7\\WebApi\\WebApi.csproj"
               }

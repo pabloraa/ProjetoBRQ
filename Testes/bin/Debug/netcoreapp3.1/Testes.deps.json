@@ -12,6 +12,7 @@
           "NSubstitute": "4.4.0",
           "ReportGenerator": "5.1.9",
           "WebApi": "1.0.0",
+          "WebApiModels": "1.0.0",
           "coverlet.collector": "1.2.0",
           "coverlet.msbuild": "3.1.2",
           "xunit": "2.4.0",

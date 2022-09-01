@@ -75,7 +75,6 @@ namespace WebApi.Controllers
             }
 
             return Ok(Mensagens.ExcluidoComSucesso);
-
         }
     }
 }

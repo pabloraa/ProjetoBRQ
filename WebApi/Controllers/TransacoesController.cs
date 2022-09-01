@@ -69,7 +69,7 @@ namespace WebApi.Controllers
 
             if (t is null)
                 return BadRequest(Mensagens.TransacaoNaoEncontrada);
-            return Ok("Transacao Atualizada!");
+            return Ok(Mensagens.TransacaoAtualizada);
         }
     }
 }

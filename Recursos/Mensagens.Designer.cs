@@ -178,6 +178,15 @@ namespace Recursos {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Transacao Atualizada!.
+        /// </summary>
+        public static string TransacaoAtualizada {
+            get {
+                return ResourceManager.GetString("TransacaoAtualizada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Transacao Não Criada.
         /// </summary>
         public static string TransacaoNaoCriada {
