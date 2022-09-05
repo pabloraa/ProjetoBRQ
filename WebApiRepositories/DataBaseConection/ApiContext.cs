@@ -13,6 +13,11 @@ namespace WebApi.DataBaseConection
            : base(options)
         { }
 
+        public ApiContext()
+        {
+
+        }
+
         public DbSet<Conta> Contas { get; set; }
 
         public DbSet<Pessoa> Pessoas { get; set; }

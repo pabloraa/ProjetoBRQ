@@ -45,8 +45,8 @@ namespace WebApi
             //services.AddScoped<IValidator<Transacao>, TransacaoValidator>();
             services.AddScoped<IValidator<Conta>, ContaValidator>();
 
-            services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("MeuBancoDeDados"));
-            //services.AddControllers();
+            //services.AddDbContext<ApiContext>(opt => opt.UseInMemoryDatabase("MeuBancoDeDados"));
+            ////services.AddControllers();
             
 
             services.AddDbContext<ApiContext>(opt => opt.UseSqlServer(@"Server = DESKTOP-10HCQPV\SQLEXPRESS; Database = ExemploBD; Trusted_Connection = True;"));

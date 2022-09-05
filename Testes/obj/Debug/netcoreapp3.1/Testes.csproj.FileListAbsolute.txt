@@ -165,7 +165,6 @@ C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\WebAp
 C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.csprojAssemblyReference.cache
 C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.AssemblyInfoInputs.cache
 C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.AssemblyInfo.cs
-C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.csproj.CoreCompileInputs.cache
 C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.csproj.CopyComplete
 C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.dll
 C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.pdb
@@ -173,3 +172,9 @@ C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Teste
 C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\Pablo\source\repos\WebApplication7\Testes\obj\Debug\netcoreapp3.1\Testes.csproj.CoreCompileInputs.cache
+C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\EntityFramework.Testing.dll
+C:\Users\Pablo\source\repos\WebApplication7\Testes\bin\Debug\netcoreapp3.1\EntityFramework.Testing.NSubstitute.dll
