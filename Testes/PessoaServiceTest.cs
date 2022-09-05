@@ -87,12 +87,11 @@ namespace Testes
             //configurar
             string id = "";
             var pessoaEncontrada = InstanciarPessoa();
-            _apiContext.Pessoas.FirstOrDefaultAsync().Returns(pessoaEncontrada);
+            _apiContext.Pessoas.FirstOrDefaultAsync(x => x.Id.Equals(id)).Returns(pessoaEncontrada);
             //executar
             var response = await _pessoaService.DeletarPorId(id);
 
             //validar
-            Assert.NotNull(response);
             Assert.Equal( Resultadoservice.NaoEncontrado, response);
         }
 
@@ -102,12 +101,11 @@ namespace Testes
             //configurar
             string id = "";
             var pessoaEncontrada = InstanciarPessoa();
-            _pessoaService.BuscaPorId(id).Returns(pessoaEncontrada);
+            _apiContext.Pessoas.FirstOrDefault(x => x.Id.Equals(id)).Returns(pessoaEncontrada);
             //executar
             var response = await _pessoaService.DeletarPorId(id);
 
             //validar
-            Assert.NotNull(response);
             Assert.Equal(Resultadoservice.NaoPodeExcluir, response);
         }
 
@@ -117,7 +115,7 @@ namespace Testes
             //configurar
             string id = "";
             var pessoaEncontrada = InstanciarPessoa();
-            _pessoaService.BuscaPorId(id).Returns(pessoaEncontrada);
+            _apiContext.Pessoas.FirstOrDefaultAsync(x => x.Id.Equals(id)).Returns(pessoaEncontrada);
             //executar
             var response = await _pessoaService.BuscarPorId(id);
             //validar
@@ -126,12 +124,28 @@ namespace Testes
         }
 
         [Fact]
+        public async Task BuscarPorIdP()
+        {
+            //configurar
+            string id = "";
+            var pessoaEncontrada = InstanciarPessoa();
+            List<Conta> c = new List<Conta>();
+            _contaService.BuscarContasPorPessoaId(id).Returns(c);
+            //executar
+            var response = await _contaService.BuscarContasPorPessoaId(id);
+
+            //validar
+            Assert.NotNull(response);
+            Assert.Equal(c,response);
+        }
+
+        [Fact]
         public async Task ResultadoCriarPessoa()
         {
             //configurar
             Pessoa p = new Pessoa();
             var pessoaCriada = InstanciarPessoa();
-            _pessoaService.Create(p).Returns(pessoaCriada);
+            
             //executar
             var response = await _pessoaService.ResultadoCriarPessoa(p);
 
@@ -141,16 +155,19 @@ namespace Testes
         }
 
         [Fact]
-        public async Task AtualizarPessoaNull()
+        public async Task AtualizarPessoaNull() //incompleto
         {
             //configurar
             string id = "";
             var pessoaEncontrada = InstanciarPessoa();
-            _pessoaService.AtualizarPessoa(id,pessoaEncontrada).Returns(pessoaEncontrada);
+            Pessoa p = new Pessoa();
+            _apiContext.Pessoas.FirstOrDefaultAsync(p => p.Id.Equals(id)).Returns(p);
             //executar
-            //var response = await _pessoaService
+            var response = await _pessoaService.AtualizarPessoa(id,p);
 
             //validar
+            Assert.NotNull(response);
+            Assert.Equal(pessoaEncontrada,response);
         }
         public Pessoa InstanciarPessoa()
         {
